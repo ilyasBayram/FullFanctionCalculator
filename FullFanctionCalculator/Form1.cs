@@ -19,6 +19,7 @@ namespace FullFanctionCalculator
         
         int buttonNumber;
         int addFirst;
+        int addSecond;
         int addSum;
         bool addsayac=false;
 
@@ -146,12 +147,12 @@ namespace FullFanctionCalculator
         private void sum_Click(object sender, EventArgs e)
         {
             addsayac = false;
-           
+            
             if (textBox1.Text==Convert.ToString(0))
             {
                 textBox1.Text = Convert.ToString(0);
             }
-            
+           
             addFirst = Convert.ToInt32(textBox1.Text);
             addSum = addSum + addFirst;
             textBox1.Text = Convert.ToString(addSum);
