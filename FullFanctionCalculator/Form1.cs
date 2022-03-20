@@ -20,14 +20,14 @@ namespace FullFanctionCalculator
         int buttonNumber;
         int addFirst;
         int addSum;
-        bool addsayac=false;
+        bool counter=false;
 
         public void addNumberToTextbox()
         {
-            if (!addsayac)
+            if (!counter)
             {
                 textBox1.Text = Convert.ToString(buttonNumber);
-                addsayac = true;
+                counter = true;
             }
             else
             {
@@ -141,17 +141,19 @@ namespace FullFanctionCalculator
         private void clear_Click(object sender, EventArgs e)
         {
             textBox1.Clear();
+            addSum = 0;
+            counter = false;
         }
 
         private void sum_Click(object sender, EventArgs e)
         {
-            addsayac = false;
-           
+            counter = false;
+            
             if (textBox1.Text==Convert.ToString(0))
             {
                 textBox1.Text = Convert.ToString(0);
             }
-            
+           
             addFirst = Convert.ToInt32(textBox1.Text);
             addSum = addSum + addFirst;
             textBox1.Text = Convert.ToString(addSum);
@@ -159,11 +161,12 @@ namespace FullFanctionCalculator
 
         private void equal_Click(object sender, EventArgs e)
         {
+            buttonActiveControl();
             addFirst = Convert.ToInt32(textBox1.Text);
             addSum = addSum + addFirst;
             textBox1.Text = Convert.ToString(addSum);
             addSum = 0;
-            addsayac = false;
+            counter = false;
            
         }
     }
