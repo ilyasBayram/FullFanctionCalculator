@@ -18,10 +18,9 @@ namespace FullFanctionCalculator
         }
         
         int buttonNumber;
-        int addFirst;
-        int addSum;
-        int minusFirst;
-        int minusSum;
+        int firstNumber;
+        int secondNumber;
+        int result;
         bool counter=false;
 
         public void addNumberToTextbox()
@@ -143,8 +142,7 @@ namespace FullFanctionCalculator
         private void clear_Click(object sender, EventArgs e)
         {
             textBox1.Clear();
-            addSum = 0;
-            minusSum = 0;
+            result = 0;
             counter = false;
         }
 
@@ -158,31 +156,23 @@ namespace FullFanctionCalculator
                 textBox1.Text = Convert.ToString(0);
             }
            
-            addFirst = Convert.ToInt32(textBox1.Text);
-            addSum = addSum + addFirst;
-            textBox1.Text = Convert.ToString(addSum);
+            firstNumber = Convert.ToInt32(textBox1.Text);
+            result = result + firstNumber;
+            textBox1.Text = Convert.ToString(result);
         }
 
         private void equal_Click(object sender, EventArgs e)
         {
             buttonActiveControl();
-            if (addFirst!=0)
+            if (firstNumber!=0)
             {
-                addFirst = Convert.ToInt32(textBox1.Text);
-                addSum = addSum + addFirst;
-                textBox1.Text = Convert.ToString(addSum);
-                addSum = 0;
+                firstNumber = Convert.ToInt32(textBox1.Text);
+                result = result + firstNumber;
+                textBox1.Text = Convert.ToString(result);
+                result = 0;
                 counter = false;
             }
-            if (minusFirst!=0)
-            {
-                minusFirst = Convert.ToInt32(textBox1.Text);
-                minusSum = minusSum - minusFirst;
-                textBox1.Text = Convert.ToString(minusSum);
-                minusSum = 0;
-                counter = false;
-            }
-           
+ 
         }
 
         private void minus_Click(object sender, EventArgs e)
@@ -195,9 +185,9 @@ namespace FullFanctionCalculator
                 textBox1.Text = Convert.ToString(0);
             }
 
-            minusFirst = Convert.ToInt32(textBox1.Text);
-            minusSum = minusFirst-minusSum;
-            textBox1.Text = Convert.ToString(minusSum);
+            firstNumber = Convert.ToInt32(textBox1.Text);
+            result = firstNumber-result;
+            textBox1.Text = Convert.ToString(-result);
         }
     }
 }
