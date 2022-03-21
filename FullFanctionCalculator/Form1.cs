@@ -20,6 +20,8 @@ namespace FullFanctionCalculator
         int buttonNumber;
         int addFirst;
         int addSum;
+        int minusFirst;
+        int minusSum;
         bool counter=false;
 
         public void addNumberToTextbox()
@@ -142,11 +144,13 @@ namespace FullFanctionCalculator
         {
             textBox1.Clear();
             addSum = 0;
+            minusSum = 0;
             counter = false;
         }
 
         private void sum_Click(object sender, EventArgs e)
         {
+            buttonActiveControl();
             counter = false;
             
             if (textBox1.Text==Convert.ToString(0))
@@ -162,12 +166,38 @@ namespace FullFanctionCalculator
         private void equal_Click(object sender, EventArgs e)
         {
             buttonActiveControl();
-            addFirst = Convert.ToInt32(textBox1.Text);
-            addSum = addSum + addFirst;
-            textBox1.Text = Convert.ToString(addSum);
-            addSum = 0;
-            counter = false;
+            if (addFirst!=0)
+            {
+                addFirst = Convert.ToInt32(textBox1.Text);
+                addSum = addSum + addFirst;
+                textBox1.Text = Convert.ToString(addSum);
+                addSum = 0;
+                counter = false;
+            }
+            if (minusFirst!=0)
+            {
+                minusFirst = Convert.ToInt32(textBox1.Text);
+                minusSum = minusSum - minusFirst;
+                textBox1.Text = Convert.ToString(minusSum);
+                minusSum = 0;
+                counter = false;
+            }
            
+        }
+
+        private void minus_Click(object sender, EventArgs e)
+        {
+            buttonActiveControl();
+            counter = false;
+
+            if (textBox1.Text == Convert.ToString(0))
+            {
+                textBox1.Text = Convert.ToString(0);
+            }
+
+            minusFirst = Convert.ToInt32(textBox1.Text);
+            minusSum = minusFirst-minusSum;
+            textBox1.Text = Convert.ToString(minusSum);
         }
     }
 }

@@ -167,6 +167,7 @@ namespace FullFanctionCalculator
             this.minus.TabIndex = 13;
             this.minus.Text = "-";
             this.minus.UseVisualStyleBackColor = false;
+            this.minus.Click += new System.EventHandler(this.minus_Click);
             // 
             // sum
             // 
