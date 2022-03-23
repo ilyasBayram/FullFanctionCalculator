@@ -185,9 +185,15 @@ namespace FullFanctionCalculator
                 textBox1.Text = Convert.ToString(0);
             }
 
-            firstNumber = Convert.ToInt32(textBox1.Text);
-            result = firstNumber-result;
-            textBox1.Text = Convert.ToString(-result);
+                result = Convert.ToInt32(textBox1.Text);
+                firstNumber = firstNumber - result;
+                textBox1.Text = Convert.ToString(firstNumber);
+       
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
