@@ -18,35 +18,40 @@ namespace FullFanctionCalculator
         }
 
         #region variables
-        int buttonNumber;
+        string buttonNumber;
+        bool commaDecimal = true;
         int firstNumber;
         int secondNumber;
         int result;
         bool counter=false;
+        
         #endregion
 
         #region methods
+
+        //It adds number to textbox. 
         public void addNumberToTextbox()
+        {  
+           string number2;
+
+           if (textBox1.Text == "0")     
+           {             
+              textBox1.Text = buttonNumber;               
+           }
+           else
+           {
+               number2 = textBox1.Text + buttonNumber;
+               textBox1.Text = number2;
+           }     
+        }
+
+        //It adds comma to textbox.
+        public void addCommaToTexbox()
         {
-            if (!counter)
+            if (commaDecimal == true)
             {
-                textBox1.Text = Convert.ToString(buttonNumber);
-                counter = true;
-            }
-            else
-            {
-                int number = Convert.ToInt32(textBox1.Text);
-                int number2;
-                if (number == 0)
-                {
-                    number2 = number + buttonNumber;
-                    textBox1.Text = Convert.ToString(number2);
-                }
-                else
-                {
-                    number2 = (number * 10) + buttonNumber;
-                    textBox1.Text = Convert.ToString(number2);
-                }
+                textBox1.Text = "0,";
+                commaDecimal = false;
             }
         }
 
@@ -120,7 +125,7 @@ namespace FullFanctionCalculator
  
         private void Form1_Load(object sender, EventArgs e)
         {
-            textBox1.Text = Convert.ToString(0);
+            textBox1.Text = "0";
         }
         #endregion
 
@@ -128,7 +133,7 @@ namespace FullFanctionCalculator
 
         private void button1_Click(object sender, EventArgs e)
         {
-            buttonNumber = 1;
+            buttonNumber = "1";
             addNumberToTextbox();
             buttonActiveControl();
             
@@ -136,69 +141,69 @@ namespace FullFanctionCalculator
 
         private void button2_Click(object sender, EventArgs e)
         {
-            buttonNumber = 2;
+            buttonNumber = "2";
             addNumberToTextbox();
             buttonActiveControl();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            buttonNumber = 3;
+            buttonNumber = "3";
             addNumberToTextbox();
             buttonActiveControl();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            buttonNumber = 4;
+            buttonNumber = "4";
             addNumberToTextbox();
             buttonActiveControl();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            buttonNumber = 5;
+            buttonNumber = "5";
             addNumberToTextbox();
             buttonActiveControl();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            buttonNumber = 6;
+            buttonNumber = "6";
             addNumberToTextbox();
             buttonActiveControl();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            buttonNumber = 7;
+            buttonNumber = "7";
             addNumberToTextbox();
             buttonActiveControl();
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            buttonNumber = 8;
+            buttonNumber = "8";
             addNumberToTextbox();
             buttonActiveControl();
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-            buttonNumber = 9;
+            buttonNumber = "9";
             addNumberToTextbox();
             buttonActiveControl();
         }
 
         private void button0_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text==Convert.ToString(0))
+            if (textBox1.Text=="0")
             {
-                textBox1.Text = Convert.ToString(0);
+                textBox1.Text = "";
             }
             else
             {
-                buttonNumber = 0;
+                buttonNumber = "0";
                 addNumberToTextbox();
             }
            
@@ -207,7 +212,7 @@ namespace FullFanctionCalculator
         private void ac_Click(object sender, EventArgs e)
         {
             textBox1.Clear();
-            result = 0;
+            textBox1.Text = "0";
             counter = false;
         }
 
@@ -272,7 +277,49 @@ namespace FullFanctionCalculator
             continueWorking();
         }
 
-       
+        private void comma_Click(object sender, EventArgs e)
+        {
+
+            if (textBox1.Text.Contains(","))
+            {
+                textBox1.Text = textBox1.Text;
+            }
+            else
+            {
+                if (textBox1.Text=="0")
+                {
+                    addCommaToTexbox();
+                }
+                else
+                {
+                    buttonNumber = ",";
+                    addNumberToTextbox();
+                }
+
+            }
+                
+        }
+
+        //It clears all textbox.
+        private void clearall_Click(object sender, EventArgs e)
+        {
+            textBox1.Clear();
+            textBox1.Text = "0";
+        }
+
+        //It clears numbers one by one.
+        private void celareach_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text=="0")
+            {
+                textBox1.Text = "0";
+            }
+            else
+            {
+                textBox1.Text = textBox1.Text.Substring(0, textBox1.Text.Length - 1);
+            }
+           
+        }
     }
 }
 #endregion

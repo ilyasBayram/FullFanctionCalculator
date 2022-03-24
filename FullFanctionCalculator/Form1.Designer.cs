@@ -63,9 +63,10 @@ namespace FullFanctionCalculator
             this.textBox1.Font = new System.Drawing.Font("Consolas", 23F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(45, 81);
             this.textBox1.Name = "textBox1";
-            this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textBox1.Size = new System.Drawing.Size(556, 54);
             this.textBox1.TabIndex = 0;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // button1
@@ -277,6 +278,7 @@ namespace FullFanctionCalculator
             this.comma.Text = ",";
             this.comma.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.comma.UseVisualStyleBackColor = true;
+            this.comma.Click += new System.EventHandler(this.comma_Click);
             // 
             // pictureBox1
             // 
@@ -314,6 +316,7 @@ namespace FullFanctionCalculator
             this.clearall.TabIndex = 21;
             this.clearall.Text = "C";
             this.clearall.UseVisualStyleBackColor = false;
+            this.clearall.Click += new System.EventHandler(this.clearall_Click);
             // 
             // celareach
             // 
@@ -326,6 +329,7 @@ namespace FullFanctionCalculator
             this.celareach.TabIndex = 22;
             this.celareach.Text = "<x";
             this.celareach.UseVisualStyleBackColor = false;
+            this.celareach.Click += new System.EventHandler(this.celareach_Click);
             // 
             // positiveandnegative
             // 
