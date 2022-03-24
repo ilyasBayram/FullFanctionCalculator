@@ -16,13 +16,16 @@ namespace FullFanctionCalculator
         {
             InitializeComponent();
         }
-        
+
+        #region variables
         int buttonNumber;
         int firstNumber;
         int secondNumber;
         int result;
         bool counter=false;
+        #endregion
 
+        #region methods
         public void addNumberToTextbox()
         {
             if (!counter)
@@ -47,17 +50,79 @@ namespace FullFanctionCalculator
             }
         }
 
-        //it prevents that button frame stays blue when it is clicked
+        //it prevents that button frame staying blue when the button is clicked
         public void buttonActiveControl()
         {
             this.ActiveControl = null;
         }
 
+        //It clears textbox, stops functions of buttons. 
+        public void stopWorking()
+        {
+            Off.Visible = false;
+            button0.Enabled = false;
+            button1.Enabled = false;
+            button2.Enabled = false;
+            button3.Enabled = false;
+            button4.Enabled = false;
+            button5.Enabled = false;
+            button6.Enabled = false;
+            button7.Enabled = false;
+            button8.Enabled = false;
+            button9.Enabled = false;
+            positiveandnegative.Enabled = false;
+            celareach.Enabled = false;
+            clearall.Enabled = false;
+            minus.Enabled = false;
+            sum.Enabled = false;
+            multiply.Enabled = false;
+            divide.Enabled = false;
+            comma.Enabled = false;
+            ac.Enabled = false;
+            equal.Enabled = false;
+            textBox1.Clear();
+            textBox1.Enabled = false;
+        }
 
+        //Number can be written again on textbox and functions of button starts.Off button is visible.
+        public void continueWorking()
+        {
+            Off.Visible = true;
+            button0.Enabled = true;
+            button1.Enabled = true;
+            button2.Enabled = true;
+            button3.Enabled = true;
+            button4.Enabled = true;
+            button5.Enabled = true;
+            button6.Enabled = true;
+            button7.Enabled = true;
+            button8.Enabled = true;
+            button9.Enabled = true;
+            positiveandnegative.Enabled = true;
+            celareach.Enabled = true;
+            clearall.Enabled = true;
+            minus.Enabled = true;
+            sum.Enabled = true;
+            multiply.Enabled = true;
+            comma.Enabled = true;
+            ac.Enabled = true;
+            divide.Enabled = true;
+            equal.Enabled = true;
+            textBox1.Enabled = true;
+            textBox1.Text = Convert.ToString(0);
+        }
+
+        //It blocks keyboard inputs as letter.
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+ 
         private void Form1_Load(object sender, EventArgs e)
         {
             textBox1.Text = Convert.ToString(0);
         }
+        #endregion
 
         #region buttons
 
@@ -118,7 +183,7 @@ namespace FullFanctionCalculator
             buttonActiveControl();
         }
 
-        private void button20_Click(object sender, EventArgs e)
+        private void button9_Click(object sender, EventArgs e)
         {
             buttonNumber = 9;
             addNumberToTextbox();
@@ -139,7 +204,7 @@ namespace FullFanctionCalculator
            
         }
 
-        private void clear_Click(object sender, EventArgs e)
+        private void ac_Click(object sender, EventArgs e)
         {
             textBox1.Clear();
             result = 0;
@@ -195,6 +260,19 @@ namespace FullFanctionCalculator
         {
 
         }
+
+        private void off_Click(object sender, EventArgs e)
+        {
+            stopWorking();
+
+        }
+
+        private void on_Click(object sender, EventArgs e)
+        {
+            continueWorking();
+        }
+
+       
     }
 }
 #endregion

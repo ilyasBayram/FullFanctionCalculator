@@ -37,23 +37,23 @@ namespace FullFanctionCalculator
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.button20 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.minus = new System.Windows.Forms.Button();
             this.sum = new System.Windows.Forms.Button();
-            this.clear = new System.Windows.Forms.Button();
+            this.ac = new System.Windows.Forms.Button();
             this.equal = new System.Windows.Forms.Button();
             this.divide = new System.Windows.Forms.Button();
             this.multiply = new System.Windows.Forms.Button();
             this.button0 = new System.Windows.Forms.Button();
             this.comma = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
+            this.Off = new System.Windows.Forms.Button();
+            this.clearall = new System.Windows.Forms.Button();
+            this.celareach = new System.Windows.Forms.Button();
+            this.positiveandnegative = new System.Windows.Forms.Button();
+            this.on = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,6 +66,7 @@ namespace FullFanctionCalculator
             this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.textBox1.Size = new System.Drawing.Size(556, 54);
             this.textBox1.TabIndex = 0;
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // button1
             // 
@@ -139,17 +140,17 @@ namespace FullFanctionCalculator
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button20
+            // button9
             // 
-            this.button20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button20.Location = new System.Drawing.Point(271, 513);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(111, 62);
-            this.button20.TabIndex = 10;
-            this.button20.Text = "9";
-            this.button20.UseVisualStyleBackColor = true;
-            this.button20.Click += new System.EventHandler(this.button20_Click);
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.button9.Location = new System.Drawing.Point(271, 513);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(111, 62);
+            this.button9.TabIndex = 10;
+            this.button9.Text = "9";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button8
             // 
@@ -203,18 +204,18 @@ namespace FullFanctionCalculator
             this.sum.UseVisualStyleBackColor = false;
             this.sum.Click += new System.EventHandler(this.sum_Click);
             // 
-            // clear
+            // ac
             // 
-            this.clear.BackColor = System.Drawing.Color.Peru;
-            this.clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.clear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.clear.Location = new System.Drawing.Point(145, 270);
-            this.clear.Name = "clear";
-            this.clear.Size = new System.Drawing.Size(148, 67);
-            this.clear.TabIndex = 11;
-            this.clear.Text = "AC";
-            this.clear.UseVisualStyleBackColor = false;
-            this.clear.Click += new System.EventHandler(this.clear_Click);
+            this.ac.BackColor = System.Drawing.Color.Peru;
+            this.ac.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ac.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ac.Location = new System.Drawing.Point(145, 270);
+            this.ac.Name = "ac";
+            this.ac.Size = new System.Drawing.Size(148, 67);
+            this.ac.TabIndex = 11;
+            this.ac.Text = "AC";
+            this.ac.UseVisualStyleBackColor = false;
+            this.ac.Click += new System.EventHandler(this.ac_Click);
             // 
             // equal
             // 
@@ -289,64 +290,67 @@ namespace FullFanctionCalculator
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // button9
+            // Off
             // 
-            this.button9.BackColor = System.Drawing.Color.OrangeRed;
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button9.Location = new System.Drawing.Point(9, 270);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(117, 67);
-            this.button9.TabIndex = 20;
-            this.button9.Text = "OFF";
-            this.button9.UseVisualStyleBackColor = false;
+            this.Off.BackColor = System.Drawing.Color.OrangeRed;
+            this.Off.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Off.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.Off.Location = new System.Drawing.Point(9, 271);
+            this.Off.Name = "Off";
+            this.Off.Size = new System.Drawing.Size(125, 67);
+            this.Off.TabIndex = 20;
+            this.Off.Text = "OFF";
+            this.Off.UseVisualStyleBackColor = false;
+            this.Off.Click += new System.EventHandler(this.off_Click);
             // 
-            // button10
+            // clearall
             // 
-            this.button10.BackColor = System.Drawing.Color.Peru;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button10.Location = new System.Drawing.Point(305, 271);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(159, 66);
-            this.button10.TabIndex = 21;
-            this.button10.Text = "C";
-            this.button10.UseVisualStyleBackColor = false;
+            this.clearall.BackColor = System.Drawing.Color.Peru;
+            this.clearall.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.clearall.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.clearall.Location = new System.Drawing.Point(305, 271);
+            this.clearall.Name = "clearall";
+            this.clearall.Size = new System.Drawing.Size(159, 66);
+            this.clearall.TabIndex = 21;
+            this.clearall.Text = "C";
+            this.clearall.UseVisualStyleBackColor = false;
             // 
-            // button11
+            // celareach
             // 
-            this.button11.BackColor = System.Drawing.Color.Peru;
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button11.Location = new System.Drawing.Point(475, 271);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(145, 66);
-            this.button11.TabIndex = 22;
-            this.button11.Text = "<x";
-            this.button11.UseVisualStyleBackColor = false;
+            this.celareach.BackColor = System.Drawing.Color.Peru;
+            this.celareach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.celareach.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.celareach.Location = new System.Drawing.Point(475, 271);
+            this.celareach.Name = "celareach";
+            this.celareach.Size = new System.Drawing.Size(145, 66);
+            this.celareach.TabIndex = 22;
+            this.celareach.Text = "<x";
+            this.celareach.UseVisualStyleBackColor = false;
             // 
-            // button12
+            // positiveandnegative
             // 
-            this.button12.BackColor = System.Drawing.Color.Peru;
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button12.Location = new System.Drawing.Point(400, 359);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(104, 70);
-            this.button12.TabIndex = 23;
-            this.button12.Text = "+/-";
-            this.button12.UseVisualStyleBackColor = false;
+            this.positiveandnegative.BackColor = System.Drawing.Color.Peru;
+            this.positiveandnegative.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.positiveandnegative.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.positiveandnegative.Location = new System.Drawing.Point(400, 359);
+            this.positiveandnegative.Name = "positiveandnegative";
+            this.positiveandnegative.Size = new System.Drawing.Size(104, 70);
+            this.positiveandnegative.TabIndex = 23;
+            this.positiveandnegative.Text = "+/-";
+            this.positiveandnegative.UseVisualStyleBackColor = false;
             // 
-            // button13
+            // on
             // 
-            this.button13.BackColor = System.Drawing.Color.YellowGreen;
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button13.Location = new System.Drawing.Point(9, 270);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(125, 67);
-            this.button13.TabIndex = 24;
-            this.button13.Text = "ON";
-            this.button13.UseVisualStyleBackColor = false;
+            this.on.BackColor = System.Drawing.Color.YellowGreen;
+            this.on.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.on.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.on.Location = new System.Drawing.Point(9, 271);
+            this.on.Name = "on";
+            this.on.Size = new System.Drawing.Size(125, 67);
+            this.on.TabIndex = 24;
+            this.on.Text = "ON";
+            this.on.UseVisualStyleBackColor = false;
+            this.on.Click += new System.EventHandler(this.on_Click);
             // 
             // Form1
             // 
@@ -354,10 +358,11 @@ namespace FullFanctionCalculator
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(638, 681);
-            this.Controls.Add(this.button13);
-            this.Controls.Add(this.button12);
-            this.Controls.Add(this.button11);
-            this.Controls.Add(this.button10);
+            this.Controls.Add(this.Off);
+            this.Controls.Add(this.on);
+            this.Controls.Add(this.positiveandnegative);
+            this.Controls.Add(this.celareach);
+            this.Controls.Add(this.clearall);
             this.Controls.Add(this.comma);
             this.Controls.Add(this.button0);
             this.Controls.Add(this.multiply);
@@ -365,7 +370,7 @@ namespace FullFanctionCalculator
             this.Controls.Add(this.equal);
             this.Controls.Add(this.minus);
             this.Controls.Add(this.sum);
-            this.Controls.Add(this.button20);
+            this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
@@ -374,8 +379,7 @@ namespace FullFanctionCalculator
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.clear);
-            this.Controls.Add(this.button9);
+            this.Controls.Add(this.ac);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -398,23 +402,23 @@ namespace FullFanctionCalculator
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button20;
+        private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button minus;
         private System.Windows.Forms.Button sum;
-        private System.Windows.Forms.Button clear;
+        private System.Windows.Forms.Button ac;
         private System.Windows.Forms.Button equal;
         private System.Windows.Forms.Button divide;
         private System.Windows.Forms.Button multiply;
         private System.Windows.Forms.Button button0;
         private System.Windows.Forms.Button comma;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button Off;
+        private System.Windows.Forms.Button clearall;
+        private System.Windows.Forms.Button celareach;
+        private System.Windows.Forms.Button positiveandnegative;
+        private System.Windows.Forms.Button on;
     }
 }
 
