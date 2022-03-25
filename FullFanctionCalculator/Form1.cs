@@ -215,17 +215,8 @@ namespace FullFanctionCalculator
 
         private void sum_Click(object sender, EventArgs e)
         {
-            buttonActiveControl();
-            counter = false;
-            
-            if (textBox1.Text==Convert.ToString(0))
-            {
-                textBox1.Text = Convert.ToString(0);
-            }
-           
-            firstNumber = Convert.ToInt32(textBox1.Text);
-            result = result + firstNumber;
-            textBox1.Text = Convert.ToString(result);
+            labelData.Text = textBox1.Text + "+";
+            sum.BackColor = Color.Cornsilk;
         }
 
         private void equal_Click(object sender, EventArgs e)
@@ -263,17 +254,20 @@ namespace FullFanctionCalculator
 
         }
 
+        //It is off button.
         private void off_Click(object sender, EventArgs e)
         {
             stopWorking();
 
         }
 
+        //ıt is on button.
         private void on_Click(object sender, EventArgs e)
         {
             continueWorking();
         }
 
+        //ıt adds comma to make number decimal number.
         private void comma_Click(object sender, EventArgs e)
         {
 
@@ -327,6 +321,7 @@ namespace FullFanctionCalculator
            
         }
 
+        //It makes number positive or negative.
         private void positiveandnegative_Click(object sender, EventArgs e)
         {
             if (textBox1.Text.Contains("-"))//If it has "-" already, it deletes it.
@@ -341,7 +336,7 @@ namespace FullFanctionCalculator
                 }
                 else
                 {
-                    textBox1.Text = "-" + textBox1.Text;//If it does not has "-" it adds one one  makes the number negative
+                    textBox1.Text = "-" + textBox1.Text;//If it does not has "-" it adds one and makes the number negative.
                 }
                 
             }
