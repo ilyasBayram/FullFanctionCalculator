@@ -51,9 +51,10 @@ namespace FullFanctionCalculator
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Off = new System.Windows.Forms.Button();
             this.clearall = new System.Windows.Forms.Button();
-            this.celareach = new System.Windows.Forms.Button();
+            this.clearOneByOne = new System.Windows.Forms.Button();
             this.positiveandnegative = new System.Windows.Forms.Button();
             this.on = new System.Windows.Forms.Button();
+            this.labelData = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -318,18 +319,18 @@ namespace FullFanctionCalculator
             this.clearall.UseVisualStyleBackColor = false;
             this.clearall.Click += new System.EventHandler(this.clearall_Click);
             // 
-            // celareach
+            // clearOneByOne
             // 
-            this.celareach.BackColor = System.Drawing.Color.Peru;
-            this.celareach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.celareach.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.celareach.Location = new System.Drawing.Point(475, 271);
-            this.celareach.Name = "celareach";
-            this.celareach.Size = new System.Drawing.Size(145, 66);
-            this.celareach.TabIndex = 22;
-            this.celareach.Text = "<x";
-            this.celareach.UseVisualStyleBackColor = false;
-            this.celareach.Click += new System.EventHandler(this.celareach_Click);
+            this.clearOneByOne.BackColor = System.Drawing.Color.Peru;
+            this.clearOneByOne.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.clearOneByOne.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.clearOneByOne.Location = new System.Drawing.Point(475, 271);
+            this.clearOneByOne.Name = "clearOneByOne";
+            this.clearOneByOne.Size = new System.Drawing.Size(145, 66);
+            this.clearOneByOne.TabIndex = 22;
+            this.clearOneByOne.Text = "<x";
+            this.clearOneByOne.UseVisualStyleBackColor = false;
+            this.clearOneByOne.Click += new System.EventHandler(this.clearOneByOne_Click);
             // 
             // positiveandnegative
             // 
@@ -342,6 +343,7 @@ namespace FullFanctionCalculator
             this.positiveandnegative.TabIndex = 23;
             this.positiveandnegative.Text = "+/-";
             this.positiveandnegative.UseVisualStyleBackColor = false;
+            this.positiveandnegative.Click += new System.EventHandler(this.positiveandnegative_Click);
             // 
             // on
             // 
@@ -356,16 +358,24 @@ namespace FullFanctionCalculator
             this.on.UseVisualStyleBackColor = false;
             this.on.Click += new System.EventHandler(this.on_Click);
             // 
+            // labelData
+            // 
+            this.labelData.Location = new System.Drawing.Point(271, 9);
+            this.labelData.Name = "labelData";
+            this.labelData.Size = new System.Drawing.Size(111, 42);
+            this.labelData.TabIndex = 25;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(638, 681);
+            this.Controls.Add(this.labelData);
             this.Controls.Add(this.Off);
             this.Controls.Add(this.on);
             this.Controls.Add(this.positiveandnegative);
-            this.Controls.Add(this.celareach);
+            this.Controls.Add(this.clearOneByOne);
             this.Controls.Add(this.clearall);
             this.Controls.Add(this.comma);
             this.Controls.Add(this.button0);
@@ -420,9 +430,10 @@ namespace FullFanctionCalculator
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button Off;
         private System.Windows.Forms.Button clearall;
-        private System.Windows.Forms.Button celareach;
+        private System.Windows.Forms.Button clearOneByOne;
         private System.Windows.Forms.Button positiveandnegative;
         private System.Windows.Forms.Button on;
+        private System.Windows.Forms.Label labelData;
     }
 }
 

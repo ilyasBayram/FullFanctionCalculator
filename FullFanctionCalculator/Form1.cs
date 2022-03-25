@@ -24,11 +24,9 @@ namespace FullFanctionCalculator
         int secondNumber;
         int result;
         bool counter=false;
-        
         #endregion
 
-        #region methods
-
+        #region method
         //It adds number to textbox. 
         public void addNumberToTextbox()
         {  
@@ -76,7 +74,7 @@ namespace FullFanctionCalculator
             button8.Enabled = false;
             button9.Enabled = false;
             positiveandnegative.Enabled = false;
-            celareach.Enabled = false;
+            clearOneByOne.Enabled = false;
             clearall.Enabled = false;
             minus.Enabled = false;
             sum.Enabled = false;
@@ -89,7 +87,7 @@ namespace FullFanctionCalculator
             textBox1.Enabled = false;
         }
 
-        //Number can be written again on textbox and functions of button starts.Off button is visible.
+        //Functions of buttons is usable again.
         public void continueWorking()
         {
             Off.Visible = true;
@@ -104,7 +102,7 @@ namespace FullFanctionCalculator
             button8.Enabled = true;
             button9.Enabled = true;
             positiveandnegative.Enabled = true;
-            celareach.Enabled = true;
+            clearOneByOne.Enabled = true;
             clearall.Enabled = true;
             minus.Enabled = true;
             sum.Enabled = true;
@@ -130,7 +128,6 @@ namespace FullFanctionCalculator
         #endregion
 
         #region buttons
-
         private void button1_Click(object sender, EventArgs e)
         {
             buttonNumber = "1";
@@ -199,7 +196,7 @@ namespace FullFanctionCalculator
         {
             if (textBox1.Text=="0")
             {
-                textBox1.Text = "";
+                textBox1.Text = "0";
             }
             else
             {
@@ -308,17 +305,47 @@ namespace FullFanctionCalculator
         }
 
         //It clears numbers one by one.
-        private void celareach_Click(object sender, EventArgs e)
+        private void clearOneByOne_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text=="0")
+            if (textBox1.Text=="0")//It checks if it is "0". If it is, it does not delete it.
             {
                 textBox1.Text = "0";
             }
             else
             {
-                textBox1.Text = textBox1.Text.Substring(0, textBox1.Text.Length - 1);
+                if (textBox1.Text.Length==1)//It checks if it has one digit. It deletes it and add 0 to textbox.
+                {
+                    textBox1.Text = textBox1.Text.Substring(0, textBox1.Text.Length - 1);
+                    textBox1.Text = "0";
+                }
+                else
+                {
+                    textBox1.Text = textBox1.Text.Substring(0, textBox1.Text.Length - 1);
+                }
+                
             }
            
+        }
+
+        private void positiveandnegative_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text.Contains("-"))//If it has "-" already, it deletes it.
+            {
+                textBox1.Text = textBox1.Text.Substring(1);
+            }
+            else
+            {
+                if (textBox1.Text=="0")//If it equals zero it does nothing becouse zero can not be negavitve.
+                {
+                    textBox1.Text = textBox1.Text;
+                }
+                else
+                {
+                    textBox1.Text = "-" + textBox1.Text;//If it does not has "-" it adds one one  makes the number negative
+                }
+                
+            }
+            
         }
     }
 }
