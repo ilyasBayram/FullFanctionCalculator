@@ -20,10 +20,10 @@ namespace FullFanctionCalculator
         #region variables
         string buttonNumber;
         bool commaDecimal = true;
-        int firstNumber;
-        int secondNumber;
-        int result;
-        bool counter=false;
+        double firstNumber;
+        double secondNumber;
+        double result;
+        bool counter=true;
         #endregion
 
         #region method
@@ -130,17 +130,39 @@ namespace FullFanctionCalculator
         #region buttons
         private void button1_Click(object sender, EventArgs e)
         {
-            buttonNumber = "1";
-            addNumberToTextbox();
-            buttonActiveControl();
+            if (counter==true)
+            {
+                buttonNumber = "1";
+                addNumberToTextbox();
+                buttonActiveControl();
+            }
+            else
+            {
+                sum.BackColor = Color.Peru;
+                textBox1.Clear();
+                buttonNumber = "1";
+                addNumberToTextbox();
+                buttonActiveControl();
+            }
             
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            buttonNumber = "2";
-            addNumberToTextbox();
-            buttonActiveControl();
+            if (counter == true)
+            {
+                buttonNumber = "2";
+                addNumberToTextbox();
+                buttonActiveControl();
+            }
+            else
+            {
+                sum.BackColor = Color.Peru;
+                textBox1.Clear();
+                buttonNumber = "2";
+                addNumberToTextbox();
+                buttonActiveControl();
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -215,8 +237,22 @@ namespace FullFanctionCalculator
 
         private void sum_Click(object sender, EventArgs e)
         {
-            labelData.Text = textBox1.Text + "+";
-            sum.BackColor = Color.Cornsilk;
+            if (counter==true)
+            {
+                sum.BackColor = Color.Cornsilk;
+                firstNumber = long.Parse(textBox1.Text);
+                labelData.Text = Convert.ToString(firstNumber) + "+";
+                counter = false;
+            }
+            else
+            {
+                sum.BackColor = Color.Cornsilk;
+                secondNumber= long.Parse(textBox1.Text);
+                result = firstNumber + secondNumber;
+                textBox1.Text = Convert.ToString(result);
+                labelData.Text = Convert.ToString(result) + "+";
+            }
+            
         }
 
         private void equal_Click(object sender, EventArgs e)
