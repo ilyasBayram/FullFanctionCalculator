@@ -22,8 +22,10 @@ namespace FullFanctionCalculator
         bool commaDecimal = true;
         double firstNumber;
         double secondNumber;
+        double thirdnumber;
         double result;
         bool counter=true;
+        bool deleteTextbox = true;
         #endregion
 
         #region method
@@ -84,6 +86,7 @@ namespace FullFanctionCalculator
             ac.Enabled = false;
             equal.Enabled = false;
             textBox1.Clear();
+            labelData.Text = "";
             textBox1.Enabled = false;
         }
 
@@ -138,11 +141,22 @@ namespace FullFanctionCalculator
             }
             else
             {
-                sum.BackColor = Color.Peru;
-                textBox1.Clear();
-                buttonNumber = "1";
-                addNumberToTextbox();
-                buttonActiveControl();
+                if (deleteTextbox==true)
+                {
+                    sum.BackColor = Color.Peru;
+                    buttonNumber = "1";
+                    textBox1.Clear();
+                    addNumberToTextbox();
+                    buttonActiveControl();
+                    deleteTextbox = false;
+                }
+                else
+                {
+                    sum.BackColor = Color.Peru;
+                    buttonNumber = "1";
+                    addNumberToTextbox();
+                    buttonActiveControl();
+                }
             }
             
         }
@@ -154,64 +168,230 @@ namespace FullFanctionCalculator
                 buttonNumber = "2";
                 addNumberToTextbox();
                 buttonActiveControl();
+                
             }
             else
             {
-                sum.BackColor = Color.Peru;
-                textBox1.Clear();
-                buttonNumber = "2";
-                addNumberToTextbox();
-                buttonActiveControl();
+                if (deleteTextbox == true)
+                {
+                    sum.BackColor = Color.Peru;
+                    buttonNumber = "2";
+                    textBox1.Clear();
+                    addNumberToTextbox();
+                    buttonActiveControl();
+                    deleteTextbox = false;
+                }
+                else
+                {
+                    sum.BackColor = Color.Peru;
+                    buttonNumber = "2";
+                    addNumberToTextbox();
+                    buttonActiveControl();
+                }
             }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            buttonNumber = "3";
-            addNumberToTextbox();
-            buttonActiveControl();
+            if (counter == true)
+            {
+                buttonNumber = "3";
+                addNumberToTextbox();
+                buttonActiveControl();
+            }
+            else
+            {
+                if (deleteTextbox == true)
+                {
+                    sum.BackColor = Color.Peru;
+                    buttonNumber = "3";
+                    textBox1.Clear();
+                    addNumberToTextbox();
+                    buttonActiveControl();
+                    deleteTextbox = false;
+                }
+                else
+                {
+                    sum.BackColor = Color.Peru;
+                    buttonNumber = "3";
+                    addNumberToTextbox();
+                    buttonActiveControl();
+                }
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            buttonNumber = "4";
-            addNumberToTextbox();
-            buttonActiveControl();
+            if (counter == true)
+            {
+                buttonNumber = "4";
+                addNumberToTextbox();
+                buttonActiveControl();
+            }
+            else
+            {
+                if (deleteTextbox == true)
+                {
+                    sum.BackColor = Color.Peru;
+                    buttonNumber = "4";
+                    textBox1.Clear();
+                    addNumberToTextbox();
+                    buttonActiveControl();
+                    deleteTextbox = false;
+                }
+                else
+                {
+                    sum.BackColor = Color.Peru;
+                    buttonNumber = "4";
+                    addNumberToTextbox();
+                    buttonActiveControl();
+                }
+            }
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            buttonNumber = "5";
-            addNumberToTextbox();
-            buttonActiveControl();
+            if (counter == true)
+            {
+                buttonNumber = "5";
+                addNumberToTextbox();
+                buttonActiveControl();
+            }
+            else
+            {
+                if (deleteTextbox == true)
+                {
+                    sum.BackColor = Color.Peru;
+                    buttonNumber = "5";
+                    textBox1.Clear();
+                    addNumberToTextbox();
+                    buttonActiveControl();
+                    deleteTextbox = false;
+                }
+                else
+                {
+                    sum.BackColor = Color.Peru;
+                    buttonNumber = "5";
+                    addNumberToTextbox();
+                    buttonActiveControl();
+                }
+            }
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            buttonNumber = "6";
-            addNumberToTextbox();
-            buttonActiveControl();
+            if (counter == true)
+            {
+                buttonNumber = "6";
+                addNumberToTextbox();
+                buttonActiveControl();
+            }
+            else
+            {
+                if (deleteTextbox == true)
+                {
+                    sum.BackColor = Color.Peru;
+                    buttonNumber = "6";
+                    textBox1.Clear();
+                    addNumberToTextbox();
+                    buttonActiveControl();
+                    deleteTextbox = false;
+                }
+                else
+                {
+                    sum.BackColor = Color.Peru;
+                    buttonNumber = "6";
+                    addNumberToTextbox();
+                    buttonActiveControl();
+                }
+            }
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            buttonNumber = "7";
-            addNumberToTextbox();
-            buttonActiveControl();
+            if (counter == true)
+            {
+                buttonNumber = "7";
+                addNumberToTextbox();
+                buttonActiveControl();
+            }
+            else
+            {
+                if (deleteTextbox == true)
+                {
+                    sum.BackColor = Color.Peru;
+                    buttonNumber = "7";
+                    textBox1.Clear();
+                    addNumberToTextbox();
+                    buttonActiveControl();
+                    deleteTextbox = false;
+                }
+                else
+                {
+                    sum.BackColor = Color.Peru;
+                    buttonNumber = "7";
+                    addNumberToTextbox();
+                    buttonActiveControl();
+                }
+            }
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            buttonNumber = "8";
-            addNumberToTextbox();
-            buttonActiveControl();
+            if (counter == true)
+            {
+                buttonNumber = "8";
+                addNumberToTextbox();
+                buttonActiveControl();
+            }
+            else
+            {
+                if (deleteTextbox == true)
+                {
+                    sum.BackColor = Color.Peru;
+                    buttonNumber = "8";
+                    textBox1.Clear();
+                    addNumberToTextbox();
+                    buttonActiveControl();
+                    deleteTextbox = false;
+                }
+                else
+                {
+                    sum.BackColor = Color.Peru;
+                    buttonNumber = "8";
+                    addNumberToTextbox();
+                    buttonActiveControl();
+                }
+            }
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-            buttonNumber = "9";
-            addNumberToTextbox();
-            buttonActiveControl();
+            if (counter == true)
+            {
+                buttonNumber = "9";
+                addNumberToTextbox();
+                buttonActiveControl();
+            }
+            else
+            {
+                if (deleteTextbox == true)
+                {
+                    sum.BackColor = Color.Peru;
+                    buttonNumber = "9";
+                    textBox1.Clear();
+                    addNumberToTextbox();
+                    buttonActiveControl();
+                    deleteTextbox = false;
+                }
+                else
+                {
+                    sum.BackColor = Color.Peru;
+                    buttonNumber = "9";
+                    addNumberToTextbox();
+                    buttonActiveControl();
+                }
+            }
         }
 
         private void button0_Click(object sender, EventArgs e)
@@ -222,8 +402,31 @@ namespace FullFanctionCalculator
             }
             else
             {
-                buttonNumber = "0";
-                addNumberToTextbox();
+                if (counter == true)
+                {
+                    buttonNumber = "0";
+                    addNumberToTextbox();
+                    buttonActiveControl();
+                }
+                else
+                {
+                    if (deleteTextbox == true)
+                    {
+                        sum.BackColor = Color.Peru;
+                        buttonNumber = "0";
+                        textBox1.Clear();
+                        addNumberToTextbox();
+                        buttonActiveControl();
+                        deleteTextbox = false;
+                    }
+                    else
+                    {
+                        sum.BackColor = Color.Peru;
+                        buttonNumber = "0";
+                        addNumberToTextbox();
+                        buttonActiveControl();
+                    }
+                }
             }
            
         }
@@ -248,9 +451,11 @@ namespace FullFanctionCalculator
             {
                 sum.BackColor = Color.Cornsilk;
                 secondNumber= long.Parse(textBox1.Text);
-                result = firstNumber + secondNumber;
+                result = result + secondNumber;
                 textBox1.Text = Convert.ToString(result);
                 labelData.Text = Convert.ToString(result) + "+";
+                counter = false;
+                deleteTextbox = true;
             }
             
         }
@@ -319,8 +524,31 @@ namespace FullFanctionCalculator
                 }
                 else
                 {
-                    buttonNumber = ",";
-                    addNumberToTextbox();
+                    if (counter == true)
+                    {
+                        buttonNumber = ",";
+                        addNumberToTextbox();
+                        buttonActiveControl();
+                    }
+                    else
+                    {
+                        if (deleteTextbox == true)
+                        {
+                            sum.BackColor = Color.Peru;
+                            buttonNumber = ",";
+                            textBox1.Clear();
+                            addNumberToTextbox();
+                            buttonActiveControl();
+                            deleteTextbox = false;
+                        }
+                        else
+                        {
+                            sum.BackColor = Color.Peru;
+                            buttonNumber = ",";
+                            addNumberToTextbox();
+                            buttonActiveControl();
+                        }
+                    }
                 }
 
             }
