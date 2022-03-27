@@ -133,265 +133,66 @@ namespace FullFanctionCalculator
         #region buttons
         private void button1_Click(object sender, EventArgs e)
         {
-            if (counter==true)
-            {
-                buttonNumber = "1";
-                addNumberToTextbox();
-                buttonActiveControl();
-            }
-            else
-            {
-                if (deleteTextbox==true)
-                {
-                    sum.BackColor = Color.Peru;
-                    buttonNumber = "1";
-                    textBox1.Clear();
-                    addNumberToTextbox();
-                    buttonActiveControl();
-                    deleteTextbox = false;
-                }
-                else
-                {
-                    sum.BackColor = Color.Peru;
-                    buttonNumber = "1";
-                    addNumberToTextbox();
-                    buttonActiveControl();
-                }
-            }
-            
+            buttonNumber = "1";
+            addNumberToTextbox();
+            buttonActiveControl();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (counter == true)
-            {
-                buttonNumber = "2";
-                addNumberToTextbox();
-                buttonActiveControl();
-                
-            }
-            else
-            {
-                if (deleteTextbox == true)
-                {
-                    sum.BackColor = Color.Peru;
-                    buttonNumber = "2";
-                    textBox1.Clear();
-                    addNumberToTextbox();
-                    buttonActiveControl();
-                    deleteTextbox = false;
-                }
-                else
-                {
-                    sum.BackColor = Color.Peru;
-                    buttonNumber = "2";
-                    addNumberToTextbox();
-                    buttonActiveControl();
-                }
-            }
+            buttonNumber = "2";
+            addNumberToTextbox();
+            buttonActiveControl();
+
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (counter == true)
-            {
-                buttonNumber = "3";
-                addNumberToTextbox();
-                buttonActiveControl();
-            }
-            else
-            {
-                if (deleteTextbox == true)
-                {
-                    sum.BackColor = Color.Peru;
-                    buttonNumber = "3";
-                    textBox1.Clear();
-                    addNumberToTextbox();
-                    buttonActiveControl();
-                    deleteTextbox = false;
-                }
-                else
-                {
-                    sum.BackColor = Color.Peru;
-                    buttonNumber = "3";
-                    addNumberToTextbox();
-                    buttonActiveControl();
-                }
-            }
+            buttonNumber = "3";
+            addNumberToTextbox();
+            buttonActiveControl();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (counter == true)
-            {
-                buttonNumber = "4";
-                addNumberToTextbox();
-                buttonActiveControl();
-            }
-            else
-            {
-                if (deleteTextbox == true)
-                {
-                    sum.BackColor = Color.Peru;
-                    buttonNumber = "4";
-                    textBox1.Clear();
-                    addNumberToTextbox();
-                    buttonActiveControl();
-                    deleteTextbox = false;
-                }
-                else
-                {
-                    sum.BackColor = Color.Peru;
-                    buttonNumber = "4";
-                    addNumberToTextbox();
-                    buttonActiveControl();
-                }
-            }
+            buttonNumber = "4";
+            addNumberToTextbox();
+            buttonActiveControl();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            if (counter == true)
-            {
-                buttonNumber = "5";
-                addNumberToTextbox();
-                buttonActiveControl();
-            }
-            else
-            {
-                if (deleteTextbox == true)
-                {
-                    sum.BackColor = Color.Peru;
-                    buttonNumber = "5";
-                    textBox1.Clear();
-                    addNumberToTextbox();
-                    buttonActiveControl();
-                    deleteTextbox = false;
-                }
-                else
-                {
-                    sum.BackColor = Color.Peru;
-                    buttonNumber = "5";
-                    addNumberToTextbox();
-                    buttonActiveControl();
-                }
-            }
+           buttonNumber = "5";
+           addNumberToTextbox();
+           buttonActiveControl();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            if (counter == true)
-            {
-                buttonNumber = "6";
-                addNumberToTextbox();
-                buttonActiveControl();
-            }
-            else
-            {
-                if (deleteTextbox == true)
-                {
-                    sum.BackColor = Color.Peru;
-                    buttonNumber = "6";
-                    textBox1.Clear();
-                    addNumberToTextbox();
-                    buttonActiveControl();
-                    deleteTextbox = false;
-                }
-                else
-                {
-                    sum.BackColor = Color.Peru;
-                    buttonNumber = "6";
-                    addNumberToTextbox();
-                    buttonActiveControl();
-                }
-            }
+           buttonNumber = "6";
+           addNumberToTextbox();
+           buttonActiveControl();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            if (counter == true)
-            {
-                buttonNumber = "7";
-                addNumberToTextbox();
-                buttonActiveControl();
-            }
-            else
-            {
-                if (deleteTextbox == true)
-                {
-                    sum.BackColor = Color.Peru;
-                    buttonNumber = "7";
-                    textBox1.Clear();
-                    addNumberToTextbox();
-                    buttonActiveControl();
-                    deleteTextbox = false;
-                }
-                else
-                {
-                    sum.BackColor = Color.Peru;
-                    buttonNumber = "7";
-                    addNumberToTextbox();
-                    buttonActiveControl();
-                }
-            }
+           buttonNumber = "7";
+           addNumberToTextbox();
+           buttonActiveControl();
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            if (counter == true)
-            {
-                buttonNumber = "8";
-                addNumberToTextbox();
-                buttonActiveControl();
-            }
-            else
-            {
-                if (deleteTextbox == true)
-                {
-                    sum.BackColor = Color.Peru;
-                    buttonNumber = "8";
-                    textBox1.Clear();
-                    addNumberToTextbox();
-                    buttonActiveControl();
-                    deleteTextbox = false;
-                }
-                else
-                {
-                    sum.BackColor = Color.Peru;
-                    buttonNumber = "8";
-                    addNumberToTextbox();
-                    buttonActiveControl();
-                }
-            }
+          buttonNumber = "8";
+          addNumberToTextbox();
+          buttonActiveControl();
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-            if (counter == true)
-            {
-                buttonNumber = "9";
-                addNumberToTextbox();
-                buttonActiveControl();
-            }
-            else
-            {
-                if (deleteTextbox == true)
-                {
-                    sum.BackColor = Color.Peru;
-                    buttonNumber = "9";
-                    textBox1.Clear();
-                    addNumberToTextbox();
-                    buttonActiveControl();
-                    deleteTextbox = false;
-                }
-                else
-                {
-                    sum.BackColor = Color.Peru;
-                    buttonNumber = "9";
-                    addNumberToTextbox();
-                    buttonActiveControl();
-                }
-            }
+           buttonNumber = "9";
+           addNumberToTextbox();
+           buttonActiveControl();
         }
 
         private void button0_Click(object sender, EventArgs e)
@@ -402,31 +203,9 @@ namespace FullFanctionCalculator
             }
             else
             {
-                if (counter == true)
-                {
-                    buttonNumber = "0";
-                    addNumberToTextbox();
-                    buttonActiveControl();
-                }
-                else
-                {
-                    if (deleteTextbox == true)
-                    {
-                        sum.BackColor = Color.Peru;
-                        buttonNumber = "0";
-                        textBox1.Clear();
-                        addNumberToTextbox();
-                        buttonActiveControl();
-                        deleteTextbox = false;
-                    }
-                    else
-                    {
-                        sum.BackColor = Color.Peru;
-                        buttonNumber = "0";
-                        addNumberToTextbox();
-                        buttonActiveControl();
-                    }
-                }
+                buttonNumber = "0";
+                addNumberToTextbox();
+                buttonActiveControl();
             }
            
         }
@@ -440,6 +219,7 @@ namespace FullFanctionCalculator
 
         private void sum_Click(object sender, EventArgs e)
         {
+
             if (counter==true)
             {
                 sum.BackColor = Color.Cornsilk;
