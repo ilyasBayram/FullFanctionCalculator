@@ -135,101 +135,233 @@ namespace FullFanctionCalculator
         #region buttons
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            if (doOperate == true)
+            {
+                sum.BackColor = Color.Peru;
+                secondNumber =1;
+                firstNumber = firstNumber + secondNumber;
+                textBox1.Text = Convert.ToString(firstNumber);
+                labelData.Text = Convert.ToString(firstNumber) + "+";
+                doOperate = false;
+                counter++;
+
+            }
+            else 
+            {
+               
                     buttonNumber = "1";
                     addNumberToTextbox();
                     buttonActiveControl();
+              
 
+              
+
+            }
 
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-           
-          
+            if (doOperate == true)
+            {
+                sum.BackColor = Color.Peru;
+                secondNumber = 2;
+                firstNumber = firstNumber + secondNumber;
+                textBox1.Text = Convert.ToString(firstNumber);
+                labelData.Text = Convert.ToString(firstNumber) + "+";
+                doOperate = false;
+
+            }
+            else
+            {
                 buttonNumber = "2";
                 addNumberToTextbox();
                 buttonActiveControl();
-  
+            }
 
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-           
-           
+            if (doOperate == true)
+            {
+                sum.BackColor = Color.Peru;
+                secondNumber = 3;
+                firstNumber = firstNumber + secondNumber;
+                textBox1.Text = Convert.ToString(firstNumber);
+                labelData.Text = Convert.ToString(firstNumber) + "+";
+                doOperate = false;
+
+            }
+            else
+            {
                 buttonNumber = "3";
                 addNumberToTextbox();
                 buttonActiveControl();
-         
+            }
 
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-           
-         
+            if (doOperate == true)
+            {
+                sum.BackColor = Color.Peru;
+                secondNumber = 4;
+                firstNumber = firstNumber + secondNumber;
+                textBox1.Text = Convert.ToString(firstNumber);
+                labelData.Text = Convert.ToString(firstNumber) + "+";
+                doOperate = false;
+
+            }
+            else
+            {
                 buttonNumber = "4";
                 addNumberToTextbox();
                 buttonActiveControl();
-            
+            }
 
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            if (doOperate==true)
+            if (doOperate == true)
             {
-                textBox1.Clear();
+                sum.BackColor = Color.Peru;
+                secondNumber = 5;
+                firstNumber = firstNumber + secondNumber;
+                textBox1.Text = Convert.ToString(firstNumber);
+                labelData.Text = Convert.ToString(firstNumber) + "+";
+                doOperate = false;
+                counter++;
+
             }
-            
-            buttonNumber = "5";
-            addNumberToTextbox();
-            buttonActiveControl();
+            else 
+            {
+              
+                    buttonNumber = "5";
+                    addNumberToTextbox();
+                    buttonActiveControl();
+              
+
+                
+                
+            }
+
+
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-   
+           if (doOperate==true)
+            {
+                sum.BackColor = Color.Peru;
+                secondNumber =6;
+                firstNumber = firstNumber + secondNumber;
+                textBox1.Text = Convert.ToString(firstNumber);
+                labelData.Text = Convert.ToString(firstNumber) + "+";
+                doOperate = false;
+
+            }
+            else
+            {
                 buttonNumber = "6";
                 addNumberToTextbox();
                 buttonActiveControl();
-
+            }
+            
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-  
+            if (doOperate == true)
+            {
+                sum.BackColor = Color.Peru;
+                secondNumber = 7;
+                firstNumber = firstNumber + secondNumber;
+                textBox1.Text = Convert.ToString(firstNumber);
+                labelData.Text = Convert.ToString(firstNumber) + "+";
+                doOperate = false;
+
+            }
+            else
+            {
                 buttonNumber = "7";
                 addNumberToTextbox();
                 buttonActiveControl();
- 
+            }
+
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
 
+            if (doOperate == true)
+            {
+                sum.BackColor = Color.Peru;
+                secondNumber = 8;
+                firstNumber = firstNumber + secondNumber;
+                textBox1.Text = Convert.ToString(firstNumber);
+                labelData.Text = Convert.ToString(firstNumber) + "+";
+                doOperate = false;
+
+            }
+            else
+            {
                 buttonNumber = "8";
                 addNumberToTextbox();
                 buttonActiveControl();
+            }
 
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
+            if (doOperate == true)
+            {
+                sum.BackColor = Color.Peru;
+                secondNumber = 9;
+                firstNumber = firstNumber + secondNumber;
+                textBox1.Text = Convert.ToString(firstNumber);
+                labelData.Text = Convert.ToString(firstNumber) + "+";
+                doOperate = false;
 
+            }
+            else
+            {
                 buttonNumber = "9";
                 addNumberToTextbox();
                 buttonActiveControl();
+            }
 
         }
 
         private void button0_Click(object sender, EventArgs e)
         {
+            if (textBox1.Text=="0")
+            {
+                textBox1.Text = "0";
+            }
+            else
+            {
+                if (doOperate == true)
+                {
+                    sum.BackColor = Color.Peru;
+                    secondNumber = 1;
+                    firstNumber = firstNumber + secondNumber;
+                    textBox1.Text = Convert.ToString(firstNumber);
+                    labelData.Text = Convert.ToString(firstNumber) + "+";
+                    doOperate = false;
 
+                }
+                else
+                {
                     buttonNumber = "1";
                     addNumberToTextbox();
                     buttonActiveControl();
+                }
+
+            }
 
         }
 
@@ -242,25 +374,11 @@ namespace FullFanctionCalculator
         private void sum_Click(object sender, EventArgs e)
         {
             operatioStatus = "+";
-           
-            sum.BackColor = Color.Cornsilk;
-            if (doOperate == false)
-            {
-                firstNumber = long.Parse(textBox1.Text);
-                result = firstNumber;
-            } 
-
-            if (doOperate==true)
-            {
-                secondNumber = long.Parse(textBox1.Text);
-                result = result + secondNumber;
-            }
-            labelData.Text = Convert.ToString(result) + "+";
-            textBox1.Text = Convert.ToString(result);
             doOperate = true;
-
-
-        }
+            sum.BackColor = Color.Cornsilk;
+            firstNumber = long.Parse(textBox1.Text);
+            labelData.Text = Convert.ToString(firstNumber) + "+";
+    }
 
         private void equal_Click(object sender, EventArgs e)
         {
