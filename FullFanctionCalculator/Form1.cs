@@ -22,6 +22,7 @@ namespace FullFanctionCalculator
         bool commaDecimal = true;
         double firstNumber;
         double secondNumber;
+        double thirdnumber;
         double result;
         bool counter=true;
         #endregion
@@ -84,6 +85,7 @@ namespace FullFanctionCalculator
             ac.Enabled = false;
             equal.Enabled = false;
             textBox1.Clear();
+            labelData.Text = "";
             textBox1.Enabled = false;
         }
 
@@ -138,9 +140,9 @@ namespace FullFanctionCalculator
             }
             else
             {
-                sum.BackColor = Color.Peru;
-                textBox1.Clear();
+                sum.BackColor = Color.Peru;             
                 buttonNumber = "1";
+                textBox1.Clear();
                 addNumberToTextbox();
                 buttonActiveControl();
             }
@@ -248,9 +250,10 @@ namespace FullFanctionCalculator
             {
                 sum.BackColor = Color.Cornsilk;
                 secondNumber= long.Parse(textBox1.Text);
-                result = firstNumber + secondNumber;
+                result = result + secondNumber;
                 textBox1.Text = Convert.ToString(result);
                 labelData.Text = Convert.ToString(result) + "+";
+                counter = false;
             }
             
         }
