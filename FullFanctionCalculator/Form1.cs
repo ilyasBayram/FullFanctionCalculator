@@ -34,7 +34,7 @@ namespace FullFanctionCalculator
         //It adds number to textbox. 
         public void addNumberToTextbox()
         {
-            if (isFirst)
+            if (isFirst==true || textBox1.Text=="Hata")
             {
                 textBox1.Text = buttonNumber;
                 isFirst = false;
@@ -319,6 +319,8 @@ namespace FullFanctionCalculator
                 result = number;
                 doOperate = true;
                 isFirst = true;
+                labelData.Text = Convert.ToString(result) + "/";
+                textBox1.Text = Convert.ToString(result);
             }
             else if (doOperate == true)
             {
@@ -327,17 +329,19 @@ namespace FullFanctionCalculator
                 {
                     textBox1.Text = "Hata";
                     labelData.Text = "";
+                    divide.BackColor = Color.Peru;
                     isFirst = true;
                 }
                 else
                 {
                     result = result / number;
                     isFirst = true;
+                    labelData.Text = Convert.ToString(result) + "/";
+                    textBox1.Text = Convert.ToString(result);
                 }
-               
+                
             }
-            labelData.Text = Convert.ToString(result) + "/";
-            textBox1.Text = Convert.ToString(result);
+            
         }
 
         private void equal_Click(object sender, EventArgs e)
@@ -370,7 +374,7 @@ namespace FullFanctionCalculator
                 textBox1.Text = Convert.ToString(result);
                 labelData.Text = Convert.ToString(result);
                 multiply.BackColor = Color.Peru;
-                result = 0;
+                result = 1;
                 isFirst = true;
             }
             if ( operationStatus == "/")
@@ -381,8 +385,8 @@ namespace FullFanctionCalculator
                     textBox1.Text = "Hata";
                     labelData.Text = "";
                     divide.BackColor = Color.Peru;
-                    result = 0;
-                    isFirst = true;
+                    result = result * result;
+                    isFirst = false;
                 }
                 else
                 {
@@ -390,7 +394,7 @@ namespace FullFanctionCalculator
                     textBox1.Text = Convert.ToString(result);
                     labelData.Text = Convert.ToString(result);
                     divide.BackColor = Color.Peru;
-                    result = 0;
+                    result = result * result;
                     isFirst = true;
                 }
             }
