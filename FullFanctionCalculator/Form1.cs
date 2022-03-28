@@ -20,31 +20,40 @@ namespace FullFanctionCalculator
         #region variables
         string buttonNumber;
         bool commaDecimal = true;
-        double firstNumber;
-        double secondNumber;
-        string operatioStatus;        
+        double number;
+        string operationStatus;        
         double result;
         int counter=0;
         bool deleteTextbox = true;
         bool doOperate = false;
+        bool isFirst = true;
+
         #endregion
 
         #region method
         //It adds number to textbox. 
         public void addNumberToTextbox()
-        {  
-           string number2;
-
-           if (textBox1.Text == "0")     
-           {             
-              textBox1.Text = buttonNumber;               
-           }
-            
-           else
-           {
-               number2 = textBox1.Text + buttonNumber;
-               textBox1.Text = number2;
-           }     
+        {
+            if (isFirst)
+            {
+                textBox1.Text = buttonNumber;
+                isFirst = false;
+                sum.BackColor = Color.Peru;
+                multiply.BackColor = Color.Peru;
+                divide.BackColor = Color.Peru;
+                minus.BackColor = Color.Peru;
+            }
+            else
+            {
+                if (textBox1.Text == "0")
+                {
+                    textBox1.Text = buttonNumber;
+                }
+                else
+                {
+                   textBox1.Text = textBox1.Text + buttonNumber;
+                }
+            }
         }
 
         //It adds comma to textbox.
@@ -90,6 +99,19 @@ namespace FullFanctionCalculator
             textBox1.Clear();
             labelData.Text = "";
             textBox1.Enabled = false;
+            buttonNumber = "";
+            commaDecimal = true;
+            number = 0;
+            operationStatus = "";
+            result = 0;
+            counter = 0;
+            deleteTextbox = true;
+            doOperate = false;
+            isFirst = true;
+            sum.BackColor = Color.Peru;
+            minus.BackColor = Color.Peru;
+            multiply.BackColor = Color.Peru;
+            divide.BackColor = Color.Peru;
         }
 
         //Functions of buttons is usable again.
@@ -118,6 +140,8 @@ namespace FullFanctionCalculator
             equal.Enabled = true;
             textBox1.Enabled = true;
             textBox1.Text = Convert.ToString(0);
+           
+
         }
 
         //It blocks keyboard inputs as letter.
@@ -135,102 +159,72 @@ namespace FullFanctionCalculator
         #region buttons
         private void button1_Click(object sender, EventArgs e)
         {
-            
-                    buttonNumber = "1";
-                    addNumberToTextbox();
-                    buttonActiveControl();
-
-
+             buttonNumber = "1";
+             addNumberToTextbox();
+             buttonActiveControl();
         }
 
         private void button2_Click(object sender, EventArgs e)
-        {
-           
-          
-                buttonNumber = "2";
-                addNumberToTextbox();
-                buttonActiveControl();
-  
-
+        {                  
+           buttonNumber = "2";
+           addNumberToTextbox();
+           buttonActiveControl();
         }
 
         private void button3_Click(object sender, EventArgs e)
-        {
-           
-           
-                buttonNumber = "3";
-                addNumberToTextbox();
-                buttonActiveControl();
-         
-
+        {                     
+           buttonNumber = "3";
+           addNumberToTextbox();
+           buttonActiveControl();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-           
-         
-                buttonNumber = "4";
-                addNumberToTextbox();
-                buttonActiveControl();
-            
-
+            buttonNumber = "4";
+            addNumberToTextbox();
+            buttonActiveControl();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            if (doOperate==true)
-            {
-                textBox1.Clear();
-            }
-            
             buttonNumber = "5";
             addNumberToTextbox();
             buttonActiveControl();
         }
 
         private void button6_Click(object sender, EventArgs e)
-        {
-   
-                buttonNumber = "6";
-                addNumberToTextbox();
-                buttonActiveControl();
-
+        {   
+             buttonNumber = "6";
+             addNumberToTextbox();
+             buttonActiveControl();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-  
-                buttonNumber = "7";
-                addNumberToTextbox();
-                buttonActiveControl();
- 
+            buttonNumber = "7";
+            addNumberToTextbox();
+            buttonActiveControl();
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-
-                buttonNumber = "8";
-                addNumberToTextbox();
-                buttonActiveControl();
-
+            buttonNumber = "8";
+            addNumberToTextbox();
+            buttonActiveControl();
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-
-                buttonNumber = "9";
-                addNumberToTextbox();
-                buttonActiveControl();
-
+            buttonNumber = "9";
+            addNumberToTextbox();
+            buttonActiveControl();
         }
 
         private void button0_Click(object sender, EventArgs e)
         {
-
-                    buttonNumber = "1";
-                    addNumberToTextbox();
-                    buttonActiveControl();
-
+             buttonNumber = "0";
+             addNumberToTextbox();
+             buttonActiveControl();
         }
 
         private void ac_Click(object sender, EventArgs e)
@@ -241,54 +235,166 @@ namespace FullFanctionCalculator
 
         private void sum_Click(object sender, EventArgs e)
         {
-            operatioStatus = "+";
-           
+            operationStatus = "+";          
             sum.BackColor = Color.Cornsilk;
+            minus.BackColor = Color.Peru;
+            multiply.BackColor = Color.Peru;
+            divide.BackColor = Color.Peru;
             if (doOperate == false)
             {
-                firstNumber = long.Parse(textBox1.Text);
-                result = firstNumber;
+                number = long.Parse(textBox1.Text);
+                result = number;
+                doOperate = true;
+                isFirst = true;
             } 
-
-            if (doOperate==true)
+            else if (doOperate==true)
             {
-                secondNumber = long.Parse(textBox1.Text);
-                result = result + secondNumber;
+                number = long.Parse(textBox1.Text);
+                result = result + number;
+                isFirst = true;
             }
             labelData.Text = Convert.ToString(result) + "+";
             textBox1.Text = Convert.ToString(result);
-            doOperate = true;
+        }
 
+        private void minus_Click(object sender, EventArgs e)
+        {
+            operationStatus = "-";
+            minus.BackColor = Color.Cornsilk;
+            sum.BackColor = Color.Peru;
+            multiply.BackColor = Color.Peru;
+            divide.BackColor = Color.Peru;
 
+            if (doOperate == false)
+            {
+                number = long.Parse(textBox1.Text);
+                result = number;
+                doOperate = true;
+                isFirst = true;
+            }
+            else if (doOperate == true)
+            {
+                number = long.Parse(textBox1.Text);
+                result = result - number;
+                isFirst = true;
+            }
+            labelData.Text = Convert.ToString(result) + "-";
+            textBox1.Text = Convert.ToString(result);
+        }
+
+        private void multiply_Click(object sender, EventArgs e)
+        {
+            operationStatus = "*";
+            multiply.BackColor = Color.Cornsilk;
+            sum.BackColor = Color.Peru;
+            minus.BackColor = Color.Peru;
+            divide.BackColor = Color.Peru;
+            if (doOperate == false)
+            {
+                number = long.Parse(textBox1.Text);
+                result = number;
+                doOperate = true;
+                isFirst = true;
+            }
+            else if (doOperate == true)
+            {
+                number = long.Parse(textBox1.Text);
+                result = result * number;
+                isFirst = true;
+            }
+            labelData.Text = Convert.ToString(result) + "*";
+            textBox1.Text = Convert.ToString(result);
+        }
+
+        private void divide_Click(object sender, EventArgs e)
+        {
+            operationStatus = "/";
+            divide.BackColor = Color.Cornsilk;
+            sum.BackColor = Color.Peru;
+            minus.BackColor = Color.Peru;
+            multiply.BackColor = Color.Peru;
+            if (doOperate == false)
+            {
+                number = long.Parse(textBox1.Text);
+                result = number;
+                doOperate = true;
+                isFirst = true;
+            }
+            else if (doOperate == true)
+            {
+                number = long.Parse(textBox1.Text);
+                if (number==0)
+                {
+                    textBox1.Text = "Hata";
+                    labelData.Text = "";
+                    isFirst = true;
+                }
+                else
+                {
+                    result = result / number;
+                    isFirst = true;
+                }
+               
+            }
+            labelData.Text = Convert.ToString(result) + "/";
+            textBox1.Text = Convert.ToString(result);
         }
 
         private void equal_Click(object sender, EventArgs e)
         {
             buttonActiveControl();
-            if (firstNumber!=0)
+            if (operationStatus=="+")
             {
-                firstNumber = Convert.ToInt32(textBox1.Text);
-                result = result + firstNumber;
+                number = long.Parse(textBox1.Text);
+                result = result + number;
                 textBox1.Text = Convert.ToString(result);
+                labelData.Text= Convert.ToString(result);
+                sum.BackColor = Color.Peru;
                 result = 0;
+                isFirst = true;
             }
- 
-        }
-
-        private void minus_Click(object sender, EventArgs e)
-        {
-            operatioStatus = "-";
-            buttonActiveControl();
-            
-            if (textBox1.Text == Convert.ToString(0))
+            if (operationStatus == "-")
             {
-                textBox1.Text = Convert.ToString(0);
+                number = long.Parse(textBox1.Text);
+                result = result - number;
+                textBox1.Text = Convert.ToString(result);
+                labelData.Text = Convert.ToString(result);
+                minus.BackColor = Color.Peru;
+                result = 0;
+                isFirst = true;
             }
-
-                result = Convert.ToInt32(textBox1.Text);
-                firstNumber = firstNumber - result;
-                textBox1.Text = Convert.ToString(firstNumber);
-       
+            if (operationStatus == "*")
+            {
+                number = long.Parse(textBox1.Text);
+                result = result * number;
+                textBox1.Text = Convert.ToString(result);
+                labelData.Text = Convert.ToString(result);
+                multiply.BackColor = Color.Peru;
+                result = 0;
+                isFirst = true;
+            }
+            if ( operationStatus == "/")
+            {
+                number = long.Parse(textBox1.Text);
+                if (number==0)
+                {
+                    textBox1.Text = "Hata";
+                    labelData.Text = "";
+                    divide.BackColor = Color.Peru;
+                    result = 0;
+                    isFirst = true;
+                }
+                else
+                {
+                    result = result / number;
+                    textBox1.Text = Convert.ToString(result);
+                    labelData.Text = Convert.ToString(result);
+                    divide.BackColor = Color.Peru;
+                    result = 0;
+                    isFirst = true;
+                }
+            }
+              
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -407,6 +513,8 @@ namespace FullFanctionCalculator
             }
             
         }
+
+        
     }
 
     

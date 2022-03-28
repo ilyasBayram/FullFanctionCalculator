@@ -243,6 +243,7 @@ namespace FullFanctionCalculator
             this.divide.TabIndex = 15;
             this.divide.Text = "/";
             this.divide.UseVisualStyleBackColor = false;
+            this.divide.Click += new System.EventHandler(this.divide_Click);
             // 
             // multiply
             // 
@@ -255,6 +256,7 @@ namespace FullFanctionCalculator
             this.multiply.TabIndex = 16;
             this.multiply.Text = "*";
             this.multiply.UseVisualStyleBackColor = false;
+            this.multiply.Click += new System.EventHandler(this.multiply_Click);
             // 
             // button0
             // 
