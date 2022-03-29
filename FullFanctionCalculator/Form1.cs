@@ -23,18 +23,16 @@ namespace FullFanctionCalculator
         double number;
         string operationStatus;        
         double result;
-        int counter=0;
         bool deleteTextbox = true;
         bool doOperate = false;
         bool isFirst = true;
-
         #endregion
 
         #region method
         //It adds number to textbox. 
         public void addNumberToTextbox()
         {
-            if (isFirst==true || textBox1.Text=="Hata")
+            if (isFirst==true || textBox1.Text=="Error")
             {
                 textBox1.Text = buttonNumber;
                 isFirst = false;
@@ -104,7 +102,6 @@ namespace FullFanctionCalculator
             number = 0;
             operationStatus = "";
             result = 0;
-            counter = 0;
             deleteTextbox = true;
             doOperate = false;
             isFirst = true;
@@ -227,12 +224,6 @@ namespace FullFanctionCalculator
              buttonActiveControl();
         }
 
-        private void ac_Click(object sender, EventArgs e)
-        {
-            textBox1.Clear();
-            textBox1.Text = "0";
-        }
-
         private void sum_Click(object sender, EventArgs e)
         {
             operationStatus = "+";          
@@ -242,14 +233,25 @@ namespace FullFanctionCalculator
             divide.BackColor = Color.Peru;
             if (doOperate == false)
             {
-                number = long.Parse(textBox1.Text);
-                result = number;
-                doOperate = true;
-                isFirst = true;
+                if (textBox1.Text == "Error")
+                {
+                    textBox1.Text = "0";
+                    number = double.Parse(textBox1.Text);
+                    result = number;
+                    doOperate = true;
+                    isFirst = true;
+                }
+                else
+                {
+                    number = double.Parse(textBox1.Text);
+                    result = number;
+                    doOperate = true;
+                    isFirst = true;
+                }
             } 
             else if (doOperate==true)
             {
-                number = long.Parse(textBox1.Text);
+                number = double.Parse(textBox1.Text);
                 result = result + number;
                 isFirst = true;
             }
@@ -267,14 +269,26 @@ namespace FullFanctionCalculator
 
             if (doOperate == false)
             {
-                number = long.Parse(textBox1.Text);
-                result = number;
-                doOperate = true;
-                isFirst = true;
+                if (textBox1.Text=="Error")
+                {
+                    textBox1.Text = "0";
+                    number = double.Parse(textBox1.Text);
+                    result = number;
+                    doOperate = true;
+                    isFirst = true;
+                }
+                else
+                {
+                    number = double.Parse(textBox1.Text);
+                    result = number;
+                    doOperate = true;
+                    isFirst = true;
+                }
+                
             }
             else if (doOperate == true)
             {
-                number = long.Parse(textBox1.Text);
+                number = double.Parse(textBox1.Text);
                 result = result - number;
                 isFirst = true;
             }
@@ -291,14 +305,25 @@ namespace FullFanctionCalculator
             divide.BackColor = Color.Peru;
             if (doOperate == false)
             {
-                number = long.Parse(textBox1.Text);
-                result = number;
-                doOperate = true;
-                isFirst = true;
+                if (textBox1.Text == "Error")
+                {
+                    textBox1.Text = "0";
+                    number = double.Parse(textBox1.Text);
+                    result = number;
+                    doOperate = true;
+                    isFirst = true;
+                }
+                else
+                {
+                    number = double.Parse(textBox1.Text);
+                    result = number;
+                    doOperate = true;
+                    isFirst = true;
+                }
             }
             else if (doOperate == true)
             {
-                number = long.Parse(textBox1.Text);
+                number = double.Parse(textBox1.Text);
                 result = result * number;
                 isFirst = true;
             }
@@ -315,22 +340,32 @@ namespace FullFanctionCalculator
             multiply.BackColor = Color.Peru;
             if (doOperate == false)
             {
-                number = long.Parse(textBox1.Text);
-                result = number;
-                doOperate = true;
-                isFirst = true;
-                labelData.Text = Convert.ToString(result) + "/";
-                textBox1.Text = Convert.ToString(result);
+                if (textBox1.Text == "Error")
+                {
+                    textBox1.Text = "0";
+                    number = double.Parse(textBox1.Text);
+                    result = number;
+                    doOperate = true;
+                    isFirst = true;
+                }
+                else
+                {
+                    number = double.Parse(textBox1.Text);
+                    result = number;
+                    doOperate = true;
+                    isFirst = true;
+                }
             }
             else if (doOperate == true)
             {
-                number = long.Parse(textBox1.Text);
+                number = double.Parse(textBox1.Text);
                 if (number==0)
                 {
-                    textBox1.Text = "Hata";
+                    textBox1.Text = "Error";
                     labelData.Text = "";
                     divide.BackColor = Color.Peru;
-                    isFirst = true;
+                    doOperate = false;
+                    isFirst = false;
                 }
                 else
                 {
@@ -347,46 +382,50 @@ namespace FullFanctionCalculator
         private void equal_Click(object sender, EventArgs e)
         {
             buttonActiveControl();
-            if (operationStatus=="+")
+            if (operationStatus=="+")//first It checks opretion type.
             {
-                number = long.Parse(textBox1.Text);
+                number = double.Parse(textBox1.Text);
                 result = result + number;
                 textBox1.Text = Convert.ToString(result);
                 labelData.Text= Convert.ToString(result);
                 sum.BackColor = Color.Peru;
                 result = 0;
+                doOperate = false;
                 isFirst = true;
             }
-            if (operationStatus == "-")
+            else if(operationStatus == "-")
             {
-                number = long.Parse(textBox1.Text);
+                number = double.Parse(textBox1.Text);
                 result = result - number;
                 textBox1.Text = Convert.ToString(result);
                 labelData.Text = Convert.ToString(result);
                 minus.BackColor = Color.Peru;
                 result = 0;
+                doOperate = false;
                 isFirst = true;
             }
-            if (operationStatus == "*")
+           else if (operationStatus == "*")
             {
-                number = long.Parse(textBox1.Text);
+                number = double.Parse(textBox1.Text);
                 result = result * number;
                 textBox1.Text = Convert.ToString(result);
                 labelData.Text = Convert.ToString(result);
                 multiply.BackColor = Color.Peru;
-                result = 1;
+                result = 0;
+                doOperate = false;
                 isFirst = true;
             }
-            if ( operationStatus == "/")
+            else if ( operationStatus == "/")//a number/0 cerates error.
             {
-                number = long.Parse(textBox1.Text);
-                if (number==0)
+                number = double.Parse(textBox1.Text);
+                if (number==0)//ıt checks if the number is eaual 0. If it is it gives error message.
                 {
-                    textBox1.Text = "Hata";
+                    textBox1.Text = "Error";
                     labelData.Text = "";
                     divide.BackColor = Color.Peru;
                     result = result * result;
-                    isFirst = false;
+                    doOperate = false;
+                    isFirst = true;
                 }
                 else
                 {
@@ -394,15 +433,36 @@ namespace FullFanctionCalculator
                     textBox1.Text = Convert.ToString(result);
                     labelData.Text = Convert.ToString(result);
                     divide.BackColor = Color.Peru;
-                    result = result * result;
+                    result = 0;
+                    doOperate = false;
                     isFirst = true;
                 }
             }
               
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        //ıt adds comma to make number decimal number.
+        private void comma_Click(object sender, EventArgs e)
         {
+
+            if (textBox1.Text.Contains(","))
+            {
+                textBox1.Text = textBox1.Text;
+            }
+            else
+            {
+                if (textBox1.Text == "0")
+                {
+                    addCommaToTexbox();
+                }
+                else
+                {
+                    buttonNumber = ",";
+                    addNumberToTextbox();
+                    buttonActiveControl();
+                }
+
+            }
 
         }
 
@@ -419,51 +479,19 @@ namespace FullFanctionCalculator
             continueWorking();
         }
 
-        //ıt adds comma to make number decimal number.
-        private void comma_Click(object sender, EventArgs e)
+        //It resarts.
+        private void ac_Click(object sender, EventArgs e)
         {
-
-            if (textBox1.Text.Contains(","))
-            {
-                textBox1.Text = textBox1.Text;
-            }
-            else
-            {
-                if (textBox1.Text=="0")
-                {
-                    addCommaToTexbox();
-                }
-                else
-                {
-                    if ( true)
-                    {
-                        buttonNumber = ",";
-                        addNumberToTextbox();
-                        buttonActiveControl();
-                    }
-                    else
-                    {
-                        if (deleteTextbox == true)
-                        {
-                            sum.BackColor = Color.Peru;
-                            buttonNumber = ",";
-                            textBox1.Clear();
-                            addNumberToTextbox();
-                            buttonActiveControl();
-                            deleteTextbox = false;
-                        }
-                        else
-                        {
-                            sum.BackColor = Color.Peru;
-                            buttonNumber = ",";
-                            addNumberToTextbox();
-                            buttonActiveControl();
-                        }
-                    }
-                }
-
-            }
-                
+            textBox1.Clear();
+            labelData.Text = "";
+            textBox1.Text = "0";
+            doOperate = false;
+            isFirst = true;
+            result = 0;
+            divide.BackColor = Color.Peru;
+            sum.BackColor = Color.Peru;
+            minus.BackColor = Color.Peru;
+            multiply.BackColor = Color.Peru;
         }
 
         //It clears all textbox.
@@ -512,6 +540,10 @@ namespace FullFanctionCalculator
                 else
                 {
                     textBox1.Text = "-" + textBox1.Text;//If it does not has "-" it adds one and makes the number negative.
+                    divide.BackColor = Color.Peru;
+                    sum.BackColor = Color.Peru;
+                    minus.BackColor = Color.Peru;
+                    multiply.BackColor = Color.Peru;
                 }
                 
             }
